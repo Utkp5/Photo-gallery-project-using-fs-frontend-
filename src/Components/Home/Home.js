@@ -3,13 +3,21 @@ import Navbar from '../Navbar/Navbar'
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import homeCss from './Home.css';
 import axios from 'axios';
+// import { makeStyles } from '@mui/material/styles';
+
+// const useStyles = makeStyles({
+//   myButton: {
+//    backgroundColor: 'red',
+//     },
+// });
 
 
 function Home() {
    
     const [imgp,setimg] = useState([]);
+   
+    // const classes = useStyles();
     
     useEffect(() => {
 
@@ -30,7 +38,7 @@ function Home() {
     <div>
       <Navbar />
 
-        <ImageList className={homeCss.imgList}>
+        <ImageList >
           {imgp.map((item) => (
             <ImageListItem key={item.img}>
               <img src={`http://localhost:5000/api/Gallery/get-photo-only/${item._id}`} alt={item.title} loading="lazy" />
