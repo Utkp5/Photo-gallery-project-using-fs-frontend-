@@ -38,17 +38,24 @@ function Home() {
     <div>
       <Navbar />
 
-        <ImageList >
-          {imgp.map((item) => (
-            <ImageListItem key={item.img}>
-              <img src={`http://localhost:5000/api/Gallery/get-photo-only/${item._id}`} alt={item.title} loading="lazy" />
-              <ImageListItemBar title={item.category} subtitle={<span>by: @PandtUtkarsh</span>} position="below" />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        
-    </div>
+      <div className="container">
+      
+         {
+          imgp.map((item) => {
+            return (
+              <div>
+              <img src={`http://localhost:5000/api/Gallery/get-photo-only/${item._id}`} style={{height : "400px", width : "400px"}} />
+              <p>Category: {item.category}</p>  
+              </div>
+            )
+          })
+         }
 
+      </div>  
+
+    </div>
+    // <img src={`http://localhost:5000/api/Gallery/get-photo-only/${item._id}`} alt={item.title} loading="lazy" style={{height : "400px", width : "400px"}} />
+    // <p title={item.category} />
 
   );
 }
