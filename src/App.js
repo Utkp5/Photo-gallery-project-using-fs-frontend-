@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
-import { Upload } from '@mui/icons-material';
+import Upload from './Components/Upload/Upload';
 
 function App() {
   return (

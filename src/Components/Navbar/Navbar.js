@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { NavLink } from 'react-router-dom';
+import '../Home/Home.css';
 
 function Navbar() {
   return (
@@ -20,7 +21,7 @@ function Navbar() {
               </IconButton>
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>Photo Gallery</Typography>
               <Button color="inherit">Pandit Utkarsh</Button>
-              <Button color="inherit">Upload</Button>
+             <NavLink to={"/Upload"} className="navlink">Upload</NavLink> 
             </Toolbar>
           </AppBar>
         </Box>
